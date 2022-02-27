@@ -1,30 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4de3cbd6_002D738d_002D40f1_002Dbfbb_002D864ecf6a0bec/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateUser" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.UserControllerShould&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.CreatAccount&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.NotCreatAccountIfErrors&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.ReturnAccountIfFound&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.Return404IfAccountNotFound&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.ReturnAllAccountsForUserIfFound&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.WithdrawalFromAccount&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.ReturnErrorsOnInvalidWithdrawal&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.Return404IfAccountNotFoundOnWithdrawal&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.DepositToAccount&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.ReturnErrorsOnInvalidDeposit&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.Return404IfAccountNotFoundOnDeposit&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould.DeleteAccount&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Controllers.AccountControllerShould&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Services.AccountServiceShould.CreateAccount&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Services.AccountServiceShould.NotCreateAccountWithInvalidBalance&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Services.AccountServiceShould.NotWithdrawalFromAccountIfInvalidBalance&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Services.AccountServiceShould.ErrorOnWithdrawalIfNotAccount&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Services.AccountServiceShould.ReadAccount&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Services.AccountServiceShould.ReadAllAccountsForUser&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Services.AccountServiceShould.NotWithdrawalFromAccountIfInvalidAmount&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::77E61E65-91E4-48E7-A199-61DA8E300456::net6.0::Test.Banking.Api.Tests.Services.UserServiceShould.CreateUser&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d188e9a0_002D34f2_002D4282_002D8ca4_002D17afba10078b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateUser #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Project Location="/Users/corabre/repos/learning/Test.Banking.Api/Test.Banking.Api.Tests" Presentation="&amp;lt;Test.Banking.Api.Tests&amp;gt;" /&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

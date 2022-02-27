@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using AutoFixture;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Test.Banking.Api.Repositories;
 using Test.Banking.Api.Repositories.DbContexts;
 using Test.Banking.Api.Types;
@@ -20,10 +21,15 @@ public class UserRepositoryShould
     public UserRepositoryShould()
     {
         this.fixture = new Fixture();
-        var options = new DbContextOptionsBuilder<UserDbContext>()
-            .UseInMemoryDatabase(databaseName: "Test")
-            .Options;
-        this.testDbContext = new UserDbContext(options);
+        var serviceProvider = new ServiceCollection()
+            .AddEntityFrameworkInMemoryDatabase()
+            .BuildServiceProvider();
+        var builder = new DbContextOptionsBuilder<UserDbContext>();
+        builder.UseInMemoryDatabase("test")
+            .UseInternalServiceProvider(serviceProvider);
+
+        this.testDbContext = new UserDbContext(builder.Options);
+
         this.userRepository = new UserRepository(testDbContext);
     }
 

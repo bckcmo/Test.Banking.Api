@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AutoFixture;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Test.Banking.Api.Repositories;
 using Test.Banking.Api.Repositories.DbContexts;
 using Test.Banking.Api.Types;
@@ -21,10 +22,15 @@ public class AccountRepositoryShould
     public AccountRepositoryShould()
     {
         this.fixture = new Fixture();
-        var options = new DbContextOptionsBuilder<AccountDbContext>()
-            .UseInMemoryDatabase(databaseName: "Test")
-            .Options;
-        this.testDbContext = new AccountDbContext(options);
+
+        var serviceProvider = new ServiceCollection()
+            .AddEntityFrameworkInMemoryDatabase()
+            .BuildServiceProvider();
+        var builder = new DbContextOptionsBuilder<AccountDbContext>();
+        builder.UseInMemoryDatabase("test")
+            .UseInternalServiceProvider(serviceProvider);
+        this.testDbContext = new AccountDbContext(builder.Options);
+        
         this.accountRepository = new AccountRepository(testDbContext);
     }
 
@@ -87,7 +93,7 @@ public class AccountRepositoryShould
     {
         var updatedBalance = 1000.89;
         var newAccount = this.fixture.Create<Account>();
-        this.testDbContext.Add(newAccount);
+        await this.testDbContext.AddAsync(newAccount);
         await this.testDbContext.SaveChangesAsync();
 
         await this.accountRepository.UpdateBalance(newAccount.Id, updatedBalance);
@@ -101,7 +107,7 @@ public class AccountRepositoryShould
     public async Task DeleteAccount()
     {
         var newAccount = this.fixture.Create<Account>();
-        this.testDbContext.Add(newAccount);
+        await this.testDbContext.AddAsync(newAccount);
         await this.testDbContext.SaveChangesAsync();
         
         await this.accountRepository.Delete(newAccount.Id);

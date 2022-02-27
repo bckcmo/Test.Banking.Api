@@ -1,8 +1,8 @@
 namespace Test.Banking.Api.Types;
 
-public class AccountUpdate
+public class AccountTransaction
 {
-    public AccountUpdate(double amount)
+    public AccountTransaction(double amount)
     {
         this.Amount = amount;
     }

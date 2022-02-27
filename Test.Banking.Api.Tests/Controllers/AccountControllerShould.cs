@@ -33,7 +33,7 @@ public class AccountControllerShould
         mockResponse.Errors = new List<string>();
         var mockAccount = fixture.Create<Account>();
         this.mockAccountService.Create(Arg.Any<Account>()).Returns(mockResponse);
-
+        
         var result = await this.controller.CreateAccount(mockAccount);
         
         (result as CreatedResult).StatusCode.Should().Be(201);
@@ -98,7 +98,7 @@ public class AccountControllerShould
         mockResponse.Errors = new List<string>();
         this.mockAccountService.Withdrawal(Arg.Any<int>(), Arg.Any<double>()).Returns(mockResponse);
 
-        var result = await this.controller.WithdrawalAccount(1, new AccountUpdate(100));
+        var result = await this.controller.WithdrawalAccount(1, new AccountTransaction(100));
         
         (result as OkObjectResult).StatusCode.Should().Be(200);
         (result as OkObjectResult).Value.Should().BeEquivalentTo(mockResponse.Result);
@@ -110,7 +110,7 @@ public class AccountControllerShould
         var mockResponse = fixture.Create<ServiceResult<Account>>();
         this.mockAccountService.Withdrawal(Arg.Any<int>(), Arg.Any<double>()).Returns(mockResponse);
 
-        var result = await this.controller.WithdrawalAccount(1, new AccountUpdate(100));
+        var result = await this.controller.WithdrawalAccount(1, new AccountTransaction(100));
         
         (result as UnprocessableEntityObjectResult).StatusCode.Should().Be(422);
         (result as UnprocessableEntityObjectResult).Value.Should().BeEquivalentTo(mockResponse.Errors);
@@ -123,7 +123,7 @@ public class AccountControllerShould
         mockResponse.Result = null;
         this.mockAccountService.Withdrawal(Arg.Any<int>(), Arg.Any<double>()).Returns(mockResponse);
 
-        var result = await this.controller.WithdrawalAccount(1, new AccountUpdate(1));
+        var result = await this.controller.WithdrawalAccount(1, new AccountTransaction(1));
 
         (result as NotFoundResult).StatusCode.Should().Be(404);
     }
@@ -135,7 +135,7 @@ public class AccountControllerShould
         mockResponse.Errors = new List<string>();
         this.mockAccountService.Deposit(Arg.Any<int>(), Arg.Any<double>()).Returns(mockResponse);
 
-        var result = await this.controller.DepositAccount(1, new AccountUpdate(100));
+        var result = await this.controller.DepositAccount(1, new AccountTransaction(100));
         
         (result as OkObjectResult).StatusCode.Should().Be(200);
         (result as OkObjectResult).Value.Should().BeEquivalentTo(mockResponse.Result);
@@ -147,7 +147,7 @@ public class AccountControllerShould
         var mockResponse = fixture.Create<ServiceResult<Account>>();
         this.mockAccountService.Deposit(Arg.Any<int>(), Arg.Any<double>()).Returns(mockResponse);
 
-        var result = await this.controller.DepositAccount(1, new AccountUpdate(100));
+        var result = await this.controller.DepositAccount(1, new AccountTransaction(100));
         
         (result as UnprocessableEntityObjectResult).StatusCode.Should().Be(422);
         (result as UnprocessableEntityObjectResult).Value.Should().BeEquivalentTo(mockResponse.Errors);
@@ -160,7 +160,7 @@ public class AccountControllerShould
         mockResponse.Result = null;
         this.mockAccountService.Deposit(Arg.Any<int>(), Arg.Any<double>()).Returns(mockResponse);
 
-        var result = await this.controller.DepositAccount(1, new AccountUpdate(1));
+        var result = await this.controller.DepositAccount(1, new AccountTransaction(1));
 
         (result as NotFoundResult).StatusCode.Should().Be(404);
     }

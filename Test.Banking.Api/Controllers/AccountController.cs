@@ -48,7 +48,7 @@ public class AccountController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult> WithdrawalAccount(int accountId, AccountUpdate update)
+    public async Task<ActionResult> WithdrawalAccount(int accountId, AccountTransaction update)
     {
         var result = await this.accountService.Withdrawal(accountId, update.Amount);
         if (result.Result is null)
@@ -64,7 +64,7 @@ public class AccountController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult> DepositAccount(int accountId, AccountUpdate update)
+    public async Task<ActionResult> DepositAccount(int accountId, AccountTransaction update)
     {
         var result = await this.accountService.Deposit(accountId, update.Amount);
         if (result.Result is null)

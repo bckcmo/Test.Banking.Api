@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "QH5sqItKzpLcwdxCoBQQjEaYKJjoFNVh9X9EdrPj8z0=",
+  "Source": "Test.Banking.Api",
+  "BasePath": "_content/Test.Banking.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
